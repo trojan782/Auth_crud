@@ -1,13 +1,13 @@
 <?php
-require_once 'databaseconn.php';
+// require_once 'databaseconn.php';
 // $showAlert = false;
 // $showError = false;
+include './Process/databaseconn.php';
+
 session_start();
 $exists = false;
 
-if ($_SERVER) {
-    //include the db connection file
-    include './Process/databaseconn.php';
+if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -21,25 +21,19 @@ if ($_SERVER) {
     // $numRow = mysqli_num_rows($value);
 
     // if ($numRow == 0) {
-        if (($password == $cpassword) && $exists == false) {
-            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    if (($password == $cpassword)) {
+        $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+        $result = $mysqli->query("INSERT INTO users (username, email, password) VALUES('$username', '$email', '$hashedPass')") or die($mysqli->error);
 
-            $mysqli->query("INSERT INTO users (username, email, password, cpassword) VALUES('$username', 'email', 'password', 'cpassword')") or die($mysqli->error);
-
+        if ($result) {
             $_SESSION['message'] = "You have successfully been registered!";
             $_SESSION['msg_type'] = "success";
-
             header("location: login.php");
-            // $sql = "INSERT INTO `users` ( `username`, 
-            //     `email`, `password`) VALUES ('$username', 
-            //     '$email', '$passwordHash')";
-
-            // $value = mysqli_query($conn, $sql);
-
-            // if($value) {
-            //     $_SESSION['success'] = "You Have successfully registered 😁";
-            //     // header("location:submit_page.php");
-            // }
+        } else {
+            $_SESSION['message'] = "There was a problem registering you!";
+            $_SESSION['msg_type'] = "danger";
+            header("location: signup.php");
         }
-    // }
+    }
 }
+   
