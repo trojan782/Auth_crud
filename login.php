@@ -1,4 +1,4 @@
-
+<?php require_once './loginProcess.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +12,6 @@
 <body>
     <div class="container">
         <div class="login">
-            <!-- <form action="post">
-                <label for="emali">
-                    <input type="email" name="email" placeholder="Email" required>
-                </label>
-
-                <label for="password">
-                    <input type="password" name="password" placeholder="Password" required>
-                </label>
-            </form>
-        </div> -->
             <div class='bold-line'></div>
             <div class='container'>
                 <div class='window'>
