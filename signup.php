@@ -12,21 +12,18 @@
 </head>
 
 <body>
+    <?php
+    if (isset($_SESSION["message"])) : ?>
 
-    <!-- <div class="alert alert-success">
-        <strong>Success!</strong> <p><?php echo $_SESSION['success']; ?></p>
-    </div> -->
-    <?php
-    if (isset($_SESSION['success'])) {
-    }
-    ?>
-    <div class="alert alert-success fade in">
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
-        <strong>Success!</strong> <?php echo $_SESSION['success']; ?>
-    </div>
-    <?php
-    unset($_SESSION['success']);
-    ?>
+        <div class="alert alert-<?= $_SESSION['msg_type'] ?>">
+
+            <?php
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+            ?>
+
+        </div>
+    <?php endif; ?>
     <div class="container">
         <div class="login">
             <div class='bold-line'></div>
@@ -36,7 +33,7 @@
                     <div class='content'>
                         <div class='welcome'>Hello There!</div>
                         <div class='subtitle'>Create an account with us!</div>
-                        <form action=" " method="post">
+                        <form action="" method="post">
                             <div class='input-fields'>
                                 <input type='text' placeholder='Username' name="username" class='input-line full-width' required></input>
                                 <input type='email' placeholder='Email' name="email" class='input-line full-width' required></input>
