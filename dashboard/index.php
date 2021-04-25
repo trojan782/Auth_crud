@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borrow</title>
-    <link rel="stylesheet" href="bootstrap-5.0.0-alpha1-dist/css/bootstrap.min.css">
+    <title>Courses</title>
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.0-alpha1-dist/css/bootstrap.min.css"> -->
     <!--Bootstrap css file -->
-    <link rel="stylesheet" href="bootstrap-5.0.0-alpha1-dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="bootstrap-5.0.0-alpha1-dist/css/bootstrap.css"> -->
     <!--Bootstrap css file-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
     <!--local stylesheet -->
 </head>
 
@@ -30,36 +32,33 @@
         <h1>Course Tracker✍🏽</h1>
         <form action="handler.php" method="POST">
             <div class="form-group">
-                <label for="firstname">Firstname</label>
-                <input type="text" name="firstname" class="form-control" placeholder="Enter your firstname" required>
+                <label for="firstname">Instructor Name</label>
+                <input type="text" name="name" class="form-control" placeholder="Enter the instructor's name" required>
             </div>
 
             <div class="form-group">
-                <label for="lastname">Lastname</label>
-                <input type="text" name="lastname" class="form-control" placeholder="Enter your lastname">
+                <label for="lastname">Course</label>
+                <input type="text" name="course" class="form-control" placeholder="Enter the name of the course">
             </div>
 
-            <div class="form-group">
-                <label for="item">Item</label>
-                <input type="text" name="item" class="form-control" placeholder="Enter the item" required>
-            </div>
 
             <div class="form-group">
                 <label for="firstname">Date</label>
                 <input type="date" name="date" class="form-control" required>
             </div>
             <a href="table.php" class="btn btn-danger">See table</a>
-            <button class="btn btn-primary" name="submit">Submit</button>
+            <button class="btn btn-primary" name="submit">Add Course</button>
         </form>
     </div>
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
     <!--local script file-->
-    <script src="bootstrap-5.0.0-alpha1-dist/js/bootstrap.min.js"></script>
+    <!-- <script src="bootstrap-5.0.0-alpha1-dist/js/bootstrap.min.js"></script> -->
     <!--Bootstrap js file -->
-    <script src="bootstrap-5.0.0-alpha1-dist/js/bootstrap.js"></script>
+    <!-- <script src="bootstrap-5.0.0-alpha1-dist/js/bootstrap.js"></script> -->
     <!--Bootstrap js file -->
 </body>
 
