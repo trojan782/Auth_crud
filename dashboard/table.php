@@ -18,7 +18,7 @@
 <body>
     <!-- Your code goes in here -->
 
-    <?php //require_once 'handler.php' 
+    <?php require_once 'handler.php'
     ?>
 
     <?php if (isset($_SESSION['message'])) : ?>
@@ -32,8 +32,8 @@
     <?php endif; ?>
 
     <?php
-    $mysqli = new mysqli('127.0.0.1', 'root', '', 'borrow') or die(mysqli_error($mysqli));
-    $result = $mysqli->query("SELECT * FROM data") or die($mysqli->error);
+    $mysqli = new mysqli('127.0.0.1', 'root', '', 'zuri1') or die(mysqli_error($mysqli));
+    $result = $mysqli->query("SELECT * FROM courses") or die($mysqli->error);
     // pre_r($result);
     ?>
     <div class="row justify-content-center container">
@@ -46,27 +46,30 @@
             </thead>
 
             <?php
-            // while ($row = $result->fetch_assoc()) : 
+            while ($row = $result->fetch_assoc()) :
             ?>
-            <tr>
-                <td><?php //echo $row['name']; 
-                    ?></td>
-                <td><?php //echo $row['course']; 
-                    ?></td>
-                <td><?php //echo $row['date']; 
-                    ?></td>
+                <tr>
+                    <td><?php echo $row['name'];
+                        ?></td>
+                    <td><?php echo $row['course'];
+                        ?></td>
+                    <td><?php echo $row['date'];
+                        ?></td>
 
-                <td>
-                    <a href="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">
-                        Edit
-                    </a>
-                    <a href="handler.php?delete=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a>
-                </td>
-            </tr>
-            <?php //endwhile; 
+                    <td>
+                        <a href="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">
+                            Edit
+                        </a>
+                        <a href="handler.php?delete=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            <?php endwhile;
             ?>
+
         </table>
     </div>
+    <a href="index.php" class="btn btn-success container">Go back</a>
+
     <!--local script file-->
     <!-- <script src="bootstrap-5.0.0-alpha1-dist/js/bootstrap.min.js"></script> -->
     <!--Bootstrap js file -->

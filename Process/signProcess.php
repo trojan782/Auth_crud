@@ -21,7 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $row = $res->fetch_array();
     if(count($row) == 0) {
         if (($password == $cpassword)) {
-            $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+            // $hashedPass = password_hash($password, PASSWORD_BCRYPT);
+            $hashedPass = md5($password);
             $result = $mysqli->query("INSERT INTO users (username, email, password) VALUES('$username', '$email', '$hashedPass')") or die($mysqli->error);
             // $query = "INSERT INTO users (username,email,password) VALUES(?,?,?)";
             // $stmt = $mysqli->prepare($query);
@@ -46,3 +47,4 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 // $query = "insert into User (Username,Email,Password,DateOfBirth,Photo,VerificationCode) values (?,?,?,?,?,?)";
 // $stmt = $conn->prepare($query);
 // $stmt->bind_param("ssssss", $username, $email, $password, $date, $photo, $verification_code);
+

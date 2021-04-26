@@ -1,6 +1,6 @@
 <?php
-// $mysqli = new mysqli('127.0.0.1', 'root', '', 'borrow') or die($mysqli->error);
-
+$mysqli = new mysqli('127.0.0.1', 'root', '', 'zuri1') or die($mysqli->error);
+// require_once "Process/databaseconn.php";
 session_start();
 if (isset($_POST['submit'])) {
     $name= $_POST['name'];

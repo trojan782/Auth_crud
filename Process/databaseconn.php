@@ -8,7 +8,7 @@ $dbname = 'zuri1';
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
 if($conn) {
-    echo 'Database connected successfully';
+    // echo 'Database connected successfully';
 }
 else {
     die("Error" . mysqli_connect_error());
