@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
 
     header("location: index.php");
     //query database
-    $mysqli->query("INSERT INTO data (name, course, date) VALUES('$name', '$course', '$date')") or die($mysqli->error);
+    $mysqli->query("INSERT INTO courses (name, course, date) VALUES('$name', '$course', '$date')") or die($mysqli->error);
 }
 
 //to delete from the database

@@ -25,7 +25,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Reset Password</a>
+                        <a class="nav-link active" aria-current="page" href="../reset.php">Reset Password</a>
                     </li>
                 </ul>
             </div>

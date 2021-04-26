@@ -10,14 +10,14 @@
     <!-- <link rel="stylesheet" href="bootstrap-5.0.0-alpha1-dist/css/bootstrap.css"> -->
     <!--Bootstrap css file-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 
     <!--local stylesheet -->
 </head>
 
 <body>
     <!-- Your code goes in here -->
-    <?php require_once 'handler.php' ?>
+
     <?php if (isset($_SESSION['message'])) : ?>
 
         <div class="alert alert-<?= $_SESSION['msg_type'] ?>">
@@ -27,9 +27,10 @@
             ?>
         </div>
     <?php endif; ?>
+    <?php include "./header.php"; ?>
 
     <div class="row justify-content-center">
-        <h1>Course Tracker✍🏽</h1>
+        <h2>Course Tracker✍🏽</h2>
         <form action="handler.php" method="POST">
             <div class="form-group">
                 <label for="firstname">Instructor Name</label>

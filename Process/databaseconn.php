@@ -4,7 +4,7 @@ $user = 'root';
 $password = '';
 $dbname = 'zuri1';
 
-//create connection
+// //create connection
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
 if($conn) {
@@ -13,3 +13,4 @@ if($conn) {
 else {
     die("Error" . mysqli_connect_error());
 }
+// $mysqli = new mysqli($host, $user, $password, $dbname)  or die(mysqli_error($mysqli));
