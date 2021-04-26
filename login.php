@@ -1,4 +1,5 @@
 <?php require_once './Process/logintest.php'?>
+<? php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
