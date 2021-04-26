@@ -29,11 +29,11 @@
                         </li>
                     </form>
                     <?php
-                    session_start();
-                    include 'Process/databaseconn.php';
-                    $username = $_SESSION["username"];
-                    $sql = mysqli_query($conn, "SELECT * FROM users where username='$username' ");
-                    $row  = mysqli_fetch_array($sql);
+                    // session_start();
+                    // include 'Process/databaseconn.php';
+                    // $username = $_SESSION["username"];
+                    // $sql = mysqli_query($conn, "SELECT * FROM users where username='$username' ");
+                    // $row  = mysqli_fetch_array($sql);
                     ?>
                     <li class="nav-item">
                         <p class="nav-link active" aria-current="page" href="#">Welcome <?php $_SESSION['username']?>
