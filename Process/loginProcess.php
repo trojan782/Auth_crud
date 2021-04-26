@@ -11,13 +11,12 @@ if (($_SERVER["REQUEST_METHOD"] == 'POST')) {
             $_SESSION['message'] ="Welcome" . $_SESSION["username"];
             header("Location: ./dashboard/index.php");
         }
-        // $_SESSION["username"] = $row['username'];
-        // $_SESSION["password"] = $row['password'];
-        // $_SESSION["Last_Name"]=$row['Last_Name']; 
-        // header("Location: ./dashboard/index.php");
-
         elseif ($_SESSION["password"] != $row["password"]) {
-            $_SESSION['message'] = "Wrong password password, please try again!";
+            $_SESSION['message'] = "Wrong  password, please try again!";
+            $_SESSION['msg_type'] = 'danger';
+        }
+        elseif($_SESSION["username"] != $row["username"] || $_SESSION["password"] != $row["password"]) {
+            $_SESSION['message'] = "Wrong details, please try again!";
             $_SESSION['msg_type'] = 'danger';
         }
     }
