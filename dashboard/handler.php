@@ -26,3 +26,16 @@ if (isset($_GET['delete'])) {
 
     header("location: table.php");
 }
+
+if (isset($_GET['edit'])) {
+    $id = $_GET['edit'];
+    $update = true;
+    // $record = mysqli_query($db, "SELECT * FROM data WHERE id=$id");
+    $record = $mysqli->query("SELECT * FROM data WHERE id=$id") or die($mysqli->error);
+
+    if (count($record) == 1) {
+        $n = mysqli_fetch_array($record);
+        $course = $n['name'];
+        $address = $n['address'];
+    }
+}
