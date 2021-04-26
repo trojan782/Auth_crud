@@ -1,5 +1,5 @@
-<?php require_once './Process/logintest.php'?>
-<? php session_start() ?>
+<?php require_once './Process/loginProcess.php'?>
+<? //php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
