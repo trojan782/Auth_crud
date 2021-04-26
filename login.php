@@ -21,7 +21,7 @@
                         <div class='welcome'>Hello Welcome back!</div>
                         <form action="" method="post">
                             <div class='input-fields'>
-                                <input type='text' name = "username" placeholder='Username' class='input-line full-width'></input>
+                                <input type='text' name = "username" placeholder='Username' class='input-line full-width' required></input>
                                 <input type='password' name = "password" placeholder='Password' class='input-line full-width'></input>
                             </div>
                             <div class='spacing'>or <a href="signup.php" class='highlight'>sign up</a></div>
