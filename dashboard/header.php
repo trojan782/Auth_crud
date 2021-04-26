@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -22,15 +23,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    <form action="post">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../logout.php">Logout</a>
+                        </li>
+                    </form>
+                    <?php
+                    session_start();
+                    include 'Process/databaseconn.php';
+                    $username = $_SESSION["username"];
+                    $sql = mysqli_query($conn, "SELECT * FROM users where username='$username' ");
+                    $row  = mysqli_fetch_array($sql);
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Logout</a>
-                    </li>
+                        <p class="nav-link active" aria-current="page" href="#">Welcome <?php $_SESSION['username']?>
 
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Welcome
-                           
-                        </a>
-                    </li> -->
+                        </p>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../reset.php">Reset Password</a>
                     </li>
