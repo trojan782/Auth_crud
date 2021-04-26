@@ -1,3 +1,4 @@
+ <?php require_once '../Process/databaseconn.php';?>
 
 <!doctype html>
 <html lang="en">
@@ -29,19 +30,19 @@
                         </li>
                     </form>
                     <?php
-                    // session_start();
+                    session_start();
                     // include 'Process/databaseconn.php';
-                    // $username = $_SESSION["username"];
-                    // $sql = mysqli_query($conn, "SELECT * FROM users where username='$username' ");
-                    // $row  = mysqli_fetch_array($sql);
+                    $username = $_SESSION["username"];
+                    $sql = mysqli_query($conn, "SELECT * FROM users where username='$username' ");
+                    $row  = mysqli_fetch_array($sql);
                     ?>
                     <li class="nav-item">
-                        <p class="nav-link active" aria-current="page" href="#">Welcome <?php $_SESSION['username']?>
+                        <p class="nav-link active" aria-current="page" href="#">Welcome <?php echo $row['username']?>
 
                         </p>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../reset.php">Reset Password</a>
+                        <a class="nav-link active btn-btn-primary" aria-current="page" href="../reset.php">Reset Password</a>
                     </li>
                 </ul>
             </div>
