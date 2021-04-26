@@ -1,4 +1,4 @@
-<?php require_once './Process/test.php' ?>
+<?php require_once './Process/signProcess.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
