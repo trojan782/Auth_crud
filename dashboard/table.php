@@ -33,7 +33,7 @@
 
     <?php
     $mysqli = new mysqli('127.0.0.1', 'root', '', 'zuri1') or die(mysqli_error($mysqli));
-    $result = $mysqli->query("SELECT * FROM courses") or die($mysqli->error);
+    $result = $mysqli->query("SELECT * FROM courses, users") or die($mysqli->error);
     // pre_r($result);
     ?>
     <div class="row justify-content-center container">
@@ -52,7 +52,7 @@
                 <tr>
                     <td><?php echo $row['name'];
                         ?></td>
-                    <td><?php echo $_SESSION['username'];
+                    <td><?php echo $row['username'];
                         ?></td>
                     <td><?php echo $row['course'];
                         ?></td>
