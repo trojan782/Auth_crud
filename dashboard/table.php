@@ -40,6 +40,7 @@
         <table class="table">
             <thead>
                 <th>Instructors Name</th>
+                <th>Created by</th>
                 <th>Course</th>
                 <th>Date</th>
                 <th colspan="2">Action</th>
@@ -51,13 +52,15 @@
                 <tr>
                     <td><?php echo $row['name'];
                         ?></td>
+                    <td><?php echo $_SESSION['username'];
+                        ?></td>
                     <td><?php echo $row['course'];
                         ?></td>
                     <td><?php echo $row['date'];
                         ?></td>
 
                     <td>
-                        <a href="./update.php"<?php echo $row['id']; ?>" class="btn btn-info">
+                        <a href="./update.php" <?php echo $row['id']; ?>" class="btn btn-info">
                             Edit
                         </a>
                         <a href="handler.php?delete=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a>
@@ -69,7 +72,7 @@
         </table>
     </div>
 
-  
+
     <a href="index.php" class="btn btn-success container">Go back</a>
 
     <!--local script file-->
