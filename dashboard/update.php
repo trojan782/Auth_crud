@@ -1,9 +1,27 @@
 <?php
 require_once './handler.php';
 include('header.php');
-$row = update_get();
+include '../Process/databaseconn.php';
 ?>
+<?php
+//getting id from url
 
+
+//selecting data associated with this particular id
+$result = mysqli_query($mysqli, "SELECT * FROM users");
+$row = mysqli_fetch_array($result);
+$id = isset($_GET['id']);
+$newRes = mysqli_query($mysqli, "SELECT * FROM users WHERE id='$id'");
+// while ($res = mysqli_fetch_array($newRes)) {
+//     $name = isset($res['name']);
+//     $course = isset($res['course']);
+// }
+$res = mysqli_fetch_array($newRes);
+if(!empty($res)) {
+    $name = $res['name'];
+    $course = $res['course'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,19 +51,20 @@ $row = update_get();
             ?>
         </div>
     <?php endif; ?>
-    <?php //include "./header.php"; ?>
+    <?php //include "./header.php"; 
+    ?>
 
     <div class="row justify-content-center">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>?id=<?php echo $row['id']; ?>" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter your name" value="<?php echo $row['name']; ?>">
+                <input type="text" name="name" class="form-control" placeholder="Enter your name" value="<?php echo $name; ?>">
             </div>
 
             <div class="form-group">
                 <label for="location">Course</label>
-                <input type="text" class="form-control" name="course" placeholder="Enter the new course" value="<?php echo $row['course']; ?>">
+                <input type="text" class="form-control" name="course" placeholder="Enter the new course" value="<?php echo $course; ?>">
             </div>
 
             <div class="form-group">
