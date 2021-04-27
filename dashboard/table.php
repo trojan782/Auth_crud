@@ -18,7 +18,7 @@
 <body>
     <!-- Your code goes in here -->
 
-    <?php require_once 'handler.php'
+    <?php require_once './handler.php'
     ?>
 
     <?php if (isset($_SESSION['message'])) : ?>
@@ -57,7 +57,7 @@
                         ?></td>
 
                     <td>
-                        <a href="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">
+                        <a href="./update.php"<?php echo $row['id']; ?>" class="btn btn-info">
                             Edit
                         </a>
                         <a href="handler.php?delete=<?php echo $row['id'] ?>" class="btn btn-danger">Delete</a>
@@ -68,6 +68,8 @@
 
         </table>
     </div>
+
+  
     <a href="index.php" class="btn btn-success container">Go back</a>
 
     <!--local script file-->

@@ -1,3 +1,9 @@
+<?php
+require_once './handler.php';
+include('header.php');
+$row = update_get();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,19 +33,19 @@
             ?>
         </div>
     <?php endif; ?>
-    <?php include "./header.php"; ?>
-    
+    <?php //include "./header.php"; ?>
+
     <div class="row justify-content-center">
-        <form action="handler.php" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?id=<?php echo $row['id']; ?>" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter your name" value="<?php echo $name; ?>">
+                <input type="text" name="name" class="form-control" placeholder="Enter your name" value="<?php echo $row['name']; ?>">
             </div>
 
             <div class="form-group">
                 <label for="location">Course</label>
-                <input type="text" class="form-control" name="location" placeholder="Enter the new course" value="<?php echo $course; ?>">
+                <input type="text" class="form-control" name="course" placeholder="Enter the new course" value="<?php echo $row['course']; ?>">
             </div>
 
             <div class="form-group">

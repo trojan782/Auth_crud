@@ -1,3 +1,4 @@
+<?php include('./resetProcess.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
