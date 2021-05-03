@@ -1,4 +1,4 @@
-<?php require_once "./handler.php" ?>
+<?php //require_once "./handler.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +19,18 @@
 <body>
     <!-- Your code goes in here -->
 
-    <?php if (isset($_SESSION['message'])) : ?>
+    <?php require_once './handler.php'; ?>
+
+    <?php
+    if (isset($_SESSION["message"])) : ?>
 
         <div class="alert alert-<?= $_SESSION['msg_type'] ?>">
 
-            <?php echo $_SESSION['message'];
+            <?php
+            echo $_SESSION['message'];
             unset($_SESSION['message']);
             ?>
+
         </div>
     <?php endif; ?>
     <?php include "./header.php"; ?>
@@ -33,7 +38,7 @@
     <div class="row justify-content-center">
         <h2>Course Tracker✍🏽</h2>
         <form action="" method="POST">
-        <input type="hidden" name = "id" value="<?php echo $id?>">
+            <input type="hidden" name="id" value="<?php echo $id ?>">
             <div class="form-group">
                 <label for="firstname">Instructor Name</label>
                 <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Enter the instructor's name" required>
@@ -51,13 +56,13 @@
             </div>
 
             <a href="table.php" class="btn btn-danger">See table</a>
-           
-            <?php 
-            if($update == true):
+
+            <?php
+            if ($update == true) :
             ?>
-            <button class="btn btn-info" name="update">Update Course</button>
-            <?php else: ?>
-            <button class="btn btn-primary" name="submit">Add Course</button>
+                <button class="btn btn-info" name="update">Update Course</button>
+            <?php else : ?>
+                <button class="btn btn-primary" name="submit">Add Course</button>
             <?php endif; ?>
         </form>
     </div>
