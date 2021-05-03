@@ -41,6 +41,7 @@ if (isset($_GET['delete'])) {
 
 //     }
 // }
+
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
