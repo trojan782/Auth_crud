@@ -1,3 +1,4 @@
+<?php require_once "./handler.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,24 +32,32 @@
 
     <div class="row justify-content-center">
         <h2>Course Tracker✍🏽</h2>
-        <form action="handler.php" method="POST">
+        <form action="" method="POST">
+        <input type="hidden" name = "id" value="<?php echo $id?>">
             <div class="form-group">
                 <label for="firstname">Instructor Name</label>
-                <input type="text" name="name" class="form-control" placeholder="Enter the instructor's name" required>
+                <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Enter the instructor's name" required>
             </div>
 
             <div class="form-group">
                 <label for="lastname">Course</label>
-                <input type="text" name="course" class="form-control" placeholder="Enter the name of the course">
+                <input type="text" name="course" class="form-control" value="<?php echo $course; ?>" placeholder=" Enter the name of the course">
             </div>
 
 
             <div class="form-group">
                 <label for="firstname">Date</label>
-                <input type="date" name="date" class="form-control" required>
+                <input type="date" name="date" value="<?php echo $date; ?> class=" form-control" required>
             </div>
             <a href="table.php" class="btn btn-danger">See table</a>
+           
+            <?php 
+            if($update == true):
+            ?>
+            <button class="btn btn-info" name="update">Update Course</button>
+            <?php else: ?>
             <button class="btn btn-primary" name="submit">Add Course</button>
+            <?php endif; ?>
         </form>
     </div>
 
