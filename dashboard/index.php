@@ -47,8 +47,9 @@
 
             <div class="form-group">
                 <label for="firstname">Date</label>
-                <input type="date" name="date" value="<?php echo $date; ?> class=" form-control" required>
+                <input type="date" name="date" value="<?php echo $date; ?>" class="form-control" required>
             </div>
+
             <a href="table.php" class="btn btn-danger">See table</a>
            
             <?php 
